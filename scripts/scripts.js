@@ -6,12 +6,17 @@ You are encouraged to use the provided naming convention for ease of review.
 
 */
 
+
+
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
 
 
+
+let modelName = "XYZ";
+let duration = 0;
 
 
 
@@ -26,11 +31,15 @@ You are encouraged to use the provided naming convention for ease of review.
 */
 
 // INSERT YOUR CODE HERE
-
-
-
-
-
+function recalculate() {
+    let costLabel = document.getElementById("calculated-cost");
+    if (modelName === "XYZ") {
+       newCost = duration * 100;
+    } else if (modelName === "CPRG") {
+        newCost = duration * 213;
+    }
+    costLabel.innerHTML = newCost.toFixed(2);
+}
 
 /****************** model button logic ******************/
 
@@ -45,8 +54,19 @@ You are encouraged to use the provided naming convention for ease of review.
     // modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-
-
+const modelButton = document.getElementById("model-button")
+function changeModel() {
+    const modelText = document.getElementById("model-text");
+    if (modelName === "XYZ") {
+        modelName = "CPRG";
+        modelText.textContent = "Model CPRG";
+    } else if (modelName === "CPRG") {
+        modelName = "XYZ";
+        modelText.textContent = "Model XYZ";
+    }
+    recalculate();
+}
+modelButton.addEventListener("click", changeModel);
 
 
 
@@ -64,6 +84,14 @@ You are encouraged to use the provided naming convention for ease of review.
 */
 
 // INSERT YOUR CODE HERE
-
+const durationButton = document.getElementById("duration-button")
+function changeDuration() {
+    const durationTxt = document.getElementById("duration-text")
+    let newDuration = prompt("New Duration:")
+    duration = newDuration
+    durationTxt.textContent = newDuration
+    recalculate();
+}
+durationButton.addEventListener("click", changeDuration)
 
 
