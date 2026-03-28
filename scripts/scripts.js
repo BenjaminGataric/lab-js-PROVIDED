@@ -33,6 +33,7 @@ let duration = 0;
 // INSERT YOUR CODE HERE
 function recalculate() {
     let costLabel = document.getElementById("calculated-cost");
+    let newCost = 0;
     if (modelName === "XYZ") {
        newCost = duration * 100;
     } else if (modelName === "CPRG") {
@@ -54,7 +55,7 @@ function recalculate() {
     // modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-const modelButton = document.getElementById("model-button")
+const modelButton = document.getElementById("model-button");
 function changeModel() {
     const modelText = document.getElementById("model-text");
     if (modelName === "XYZ") {
@@ -84,14 +85,14 @@ modelButton.addEventListener("click", changeModel);
 */
 
 // INSERT YOUR CODE HERE
-const durationButton = document.getElementById("duration-button")
+const durationButton = document.getElementById("duration-button");
 function changeDuration() {
-    const durationTxt = document.getElementById("duration-text")
-    let newDuration = prompt("New Duration:")
-    duration = newDuration
-    durationTxt.textContent = newDuration
+    const durationTxt = document.getElementById("duration-text");
+    let newDuration = prompt("New Duration:");
+    duration = newDuration;
+    durationTxt.textContent = newDuration;
     recalculate();
 }
-durationButton.addEventListener("click", changeDuration)
+durationButton.addEventListener("click", changeDuration);
 
 
